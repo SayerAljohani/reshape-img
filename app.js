@@ -31,7 +31,7 @@ app.post('/', (req, res) => {
     var arabicString = name;
     var shapedArabicText = rtlText.applyArabicShaping(arabicString);
     var readyForDisplay = rtlText.processBidirectionalText(shapedArabicText, []);
-  
+    res.download("600-edi.jpg")
     mutateAndSave(readyForDisplay)
         .then( ()=> {
             res.download("600-edi.jpg")
